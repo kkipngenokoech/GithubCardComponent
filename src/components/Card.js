@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-
-
-
+import React, { Component } from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default class GithubCard extends Component {
-
   render() {
-    const profile  = this.props
+    const profile = this.props;
     return (
-      <Card style={{ maxWidth: 345 }} className='mx-auto m-4'>
+      <Card style={{ maxWidth: 345 }} className="mx-auto m-4">
         <CardMedia
           style={{ height: 140 }}
-          className='img-fluid'
+          className="img-fluid"
           image={profile.avatar_url}
           title="green iguana"
         />
@@ -37,5 +33,3 @@ export default class GithubCard extends Component {
     );
   }
 }
-
-
