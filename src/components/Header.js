@@ -14,7 +14,7 @@ export default class Header extends Component {
           {this.props.title}
         </Grid>
         <Grid item xs={6}>
-          <InputForm addNewProfile={this.props.addNewProfile}/>
+          <InputForm addNewProfile={this.props.addNewProfile} />
         </Grid>
       </Grid>
     );

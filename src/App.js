@@ -35,19 +35,18 @@ const testDump = [
 
 export default class App extends Component {
   state = {
-    profiles: testDump
-  }
-  
-  addNewProfile = (profileData) => {
-    this.setState(prevState => ({
-      profiles: [...prevState.profiles, profileData]
-    }))
+    profiles: testDump,
+  };
 
-  }
+  addNewProfile = (profileData) => {
+    this.setState((prevState) => ({
+      profiles: [...prevState.profiles, profileData],
+    }));
+  };
   render() {
     return (
       <div className="App bg-black p-4">
-        <Header title="The Github Card" addNewProfile={this.addNewProfile}/>
+        <Header title="The Github Card" addNewProfile={this.addNewProfile} />
         <CardList profiles={this.state.profiles} />
       </div>
     );

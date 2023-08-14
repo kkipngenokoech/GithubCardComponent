@@ -5,13 +5,15 @@ import axios from "axios";
 
 export default class InputForm extends Component {
   // username = createRef()
-  state = {username: ""}
-  handleSubmit = async (event)=>{
-    event.preventDefault()
-    const response = await axios.get(`https://api.github.com/users/${this.state.username}`)
-    this.props.addNewProfile(response.data)
-    this.setState({username:""})
-  }
+  state = { username: "" };
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await axios.get(
+      `https://api.github.com/users/${this.state.username}`,
+    );
+    this.props.addNewProfile(response.data);
+    this.setState({ username: "" });
+  };
 
   render() {
     return (
@@ -32,7 +34,9 @@ export default class InputForm extends Component {
               className="bg-white"
               variant="standard"
               value={this.state.username}
-              onChange={event => this.setState({username: event.target.value})}
+              onChange={(event) =>
+                this.setState({ username: event.target.value })
+              }
               // inputRef={this.username}
             />
           </Grid>

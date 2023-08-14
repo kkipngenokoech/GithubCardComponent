@@ -1,8 +1,7 @@
 import GithubCard from "./Card";
 
-
-export default function CardList({profiles}) {
-    console.log(profiles)
+export default function CardList({ profiles }) {
+  console.log(profiles);
   return (
     <div className="container">
       <div className="row">
