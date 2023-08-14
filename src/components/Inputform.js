@@ -1,11 +1,17 @@
 import { Button, Grid, TextField } from "@mui/material";
-import { Component } from "react";
+import { Component, createRef } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
 export default class InputForm extends Component {
+  username = createRef()
+  handleSubmit = (event)=>{
+    event.preventDefault()
+    console.log(this.username.current.value)
+  }
+
   render() {
     return (
-      <form className="bg-white">
+      <form onSubmit={this.handleSubmit}>
         <Grid
           container
           className=""
@@ -15,11 +21,13 @@ export default class InputForm extends Component {
           <Grid item xs={8}>
             <TextField
               id="standard-textarea"
-              label="Multiline Placeholder"
-              placeholder="Placeholder"
+              label="Github Username"
+              placeholder="enter username"
               multiline
               fullWidth
+              className="bg-white"
               variant="standard"
+              inputRef={this.username}
             />
           </Grid>
           <Grid item xs={4} className="text-center">
@@ -29,6 +37,7 @@ export default class InputForm extends Component {
               color="success"
               endIcon={<SearchIcon />}
               className=""
+              type="submit"
             >
               SEARCH
             </Button>

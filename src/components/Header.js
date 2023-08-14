@@ -9,8 +9,7 @@ export default class Header extends Component {
         <Grid
           item
           xs={5}
-          className="ml-1 row justify-content-center align-items-center "
-          bgcolor={"white"}
+          className="ml-1 row justify-content-center align-items-center text-white"
         >
           {this.props.title}
         </Grid>
