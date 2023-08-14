@@ -1,12 +1,16 @@
 import { Button, Grid, TextField } from "@mui/material";
 import { Component, createRef } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import axios from "axios";
 
 export default class InputForm extends Component {
-  username = createRef()
-  handleSubmit = (event)=>{
+  // username = createRef()
+  state = {username: ""}
+  handleSubmit = async (event)=>{
     event.preventDefault()
-    console.log(this.username.current.value)
+    const response = await axios.get(`https://api.github.com/users/${this.state.username}`)
+    this.props.addNewProfile(response.data)
+    this.setState({username:""})
   }
 
   render() {
@@ -27,7 +31,9 @@ export default class InputForm extends Component {
               fullWidth
               className="bg-white"
               variant="standard"
-              inputRef={this.username}
+              value={this.state.username}
+              onChange={event => this.setState({username: event.target.value})}
+              // inputRef={this.username}
             />
           </Grid>
           <Grid item xs={4} className="text-center">
